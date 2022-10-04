@@ -16,8 +16,7 @@ class User(Base):
     name = Column(String(250), nullable=False)
     email = Column(String(250), nullable=False)
     password = Column(String(250), nullable=False)
-    favouriteplanets_id = Column(Integer,ForeignKey('favouriteplanets.id'))
-    favouritecharacters_id = Column(Integer,ForeignKey('favouritecharacters.id'))
+  
     
 
 class FavouritePlanets(Base):
@@ -38,7 +37,7 @@ class Planets(Base):
     # Here we define columns for the table address.
     # Notice that each column is also a normal Python instance attribute.
     id = Column(Integer, primary_key=True)
-    planet_name = Column(String(250))
+    planet_name = Column(String(250), nullable=False)
     planet_climate = Column(String(250), nullable=False)
     planet_gravity = Column(String(250), nullable=False)
     planet_orbital_period = Column(Integer, primary_key=True)
